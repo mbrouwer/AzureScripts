@@ -1,11 +1,11 @@
 [CmdLetBinding()]
 Param(
     [string]$importFolder = ".\runbooks",
-    [string]$automationAccountName = "varitAA",
-    [string]$resourceGroupName = "varitrsg-general",
-    [string]$hybridWorker = "varithyb-001",
+    [string]$automationAccountName = "",
+    [string]$resourceGroupName = "",
+    [string]$hybridWorker = "",
     [switch]$deleteHook = $false,
-    [string]$keyVaultName = "varitvault"
+    [string]$keyVaultName = ""
 )
 Function Get-Password {
     param($passwordLength = 15)
