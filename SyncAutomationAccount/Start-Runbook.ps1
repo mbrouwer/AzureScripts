@@ -13,7 +13,7 @@ $hookAuthName = "rb-$($runBookName)-auth"
 $hookAuth = (Get-AzureKeyVaultSecret -VaultName $keyVaultName -Name $hookAuthName).SecretValueText
 
 write-host "Starting Automation Runbook $($runBookName)." -ForegroundColor Green
-$body = (@{"AuthKey"="$hookAuth"} | ConvertTo-Json)
+$body = (@{"Message"="Hello World!"} | ConvertTo-Json)
 $headers = (@{"AuthKey"="$hookAuth"} )
 $jobIDs = (Invoke-RestMethod -Method Post -Uri $hookURL -Body $body -Headers $headers).JobIDs
 

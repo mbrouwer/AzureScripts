@@ -14,6 +14,8 @@ if ($requestHeader.AuthKey -eq '##AuthKey##')
     exit
 }
 
+write-output $requestBody.Message
+
 Write-Output "Logging in to Azure..."
 $connectionName = "AzureRunAsConnection"
 $servicePrincipalConnection = Get-AutomationConnection -Name $connectionName         
